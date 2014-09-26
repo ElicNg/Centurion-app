@@ -16,7 +16,7 @@ angular.module('elicngApp')
         ];
 
         $scope.counter = 0;
-
+        $scope.players = [];
         var timeout; // Keep the timeout in var
 
         $scope.onTimeout = function () {
@@ -47,6 +47,17 @@ angular.module('elicngApp')
             $scope.computeLogic();
         };
 
+        $scope.addPlayer = function () {
+            $scope.players.push({name: $scope.newPlayer, rank: 0});
+            $scope.newPlayer = '';
+        }
+
+        $scope.init = function () {
+            $scope.reset();
+        }
+
+        $scope.init();
+
         // debug
-        $scope.onTimeout();
+        // $scope.onTimeout();
     });
