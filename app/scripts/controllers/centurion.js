@@ -29,10 +29,12 @@ angular.module('elicngApp')
             if ($scope.counter >= 60) {
                 $scope.counter = 0;
                 $scope.minutes++;
-                angular.forEach($scope.players, function(p) {
+                angular.forEach($scope.players, function (p) {
                     p.level++;
                 });
             }
+
+            $('progressbar').css('width', $scope.seconds + '%');
         };
 
         $scope.start = function () {
@@ -57,13 +59,13 @@ angular.module('elicngApp')
 
         $scope.addPlayer = function () {
             if ($scope.newPlayer) {
-                $scope.players.push({name: $scope.newPlayer, level: 0});
+                $scope.players.push({ name: $scope.newPlayer, level: 0 });
                 $scope.newPlayer = '';
             }
         };
 
         $scope.debugPlus10 = function () {
-            $scope.counter +=10;
+            $scope.counter += 10;
         };
 
         $scope.init = function () {
@@ -86,7 +88,6 @@ angular.module('elicngApp')
             }
 
             $scope.$watch('players', function () {
-                console.log($scope.players);
                 localStorageService.set('players', angular.toJson($scope.players));
             }, true);
 
@@ -102,7 +103,4 @@ angular.module('elicngApp')
         };
 
         $scope.init();
-
-        // debug
-        // $scope.onTimeout();
     });
