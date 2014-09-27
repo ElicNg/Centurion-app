@@ -1,0 +1,14 @@
+.btnPlayerOptions {
+    width: 100%;
+}
+
+.title {
+    text-align: -webkit-center;
+    padding-bottom: 14px;
+    padding-top: 9px;
+}
+
+.renamebox {
+    height: 50px;
+    font-size: 20px;
+}

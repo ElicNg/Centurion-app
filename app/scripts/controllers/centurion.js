@@ -25,7 +25,6 @@ angular.module('elicngApp')
         };
 
         $scope.computeLogic = function () {
-            $scope.seconds = $scope.counter;
             if ($scope.counter >= 60) {
                 $scope.counter = 0;
                 $scope.minutes++;
@@ -35,6 +34,7 @@ angular.module('elicngApp')
                     }
                 });
             }
+            $scope.seconds = $scope.counter;
         };
 
         $scope.start = function () {
@@ -70,6 +70,7 @@ angular.module('elicngApp')
 
         $scope.debugPlus10 = function () {
             $scope.counter += 10;
+            $scope.computeLogic();
         };
 
         $scope.init = function () {
@@ -109,6 +110,7 @@ angular.module('elicngApp')
 
         $scope.openPlayerOptions = function (player) {
             $scope.selectedPlayer = player;
+            $scope.playerOptionsNewName = player.name;
             ngDialog.open({
                 template: 'playerOptions',
                 controller: 'PlayerOptionsCtrl',
@@ -124,6 +126,10 @@ angular.module('elicngApp')
             console.log('playerGiveUp' + player.name);
             player.playing = false;
         };
+
+        $scope.updatePlayerName = function (player, newName) {
+            player.name = newName;
+        }
 
         $scope.init();
     });
