@@ -77,3 +77,8 @@ body {
     border-bottom: 0;
   }
 }
+
+.swag-counterator-text {
+    font-size: 100px;
+    font-weight: bolder;
+}
