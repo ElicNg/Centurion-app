@@ -30,11 +30,11 @@ angular.module('elicngApp')
                 $scope.counter = 0;
                 $scope.minutes++;
                 angular.forEach($scope.players, function (p) {
-                    p.level++;
+                    if (p.playing) {
+                        p.level++;
+                    }
                 });
             }
-
-            $('progressbar').css('width', $scope.seconds + '%');
         };
 
         $scope.start = function () {
@@ -59,10 +59,14 @@ angular.module('elicngApp')
 
         $scope.addPlayer = function () {
             if ($scope.newPlayer) {
-                $scope.players.push({ name: $scope.newPlayer, level: 0 });
+                $scope.players.push({ name: $scope.newPlayer, level: 0, playing: true });
                 $scope.newPlayer = '';
             }
         };
+
+        $scope.playerGiveUp = function (player) {
+            player.playing = false;
+        }
 
         $scope.debugPlus10 = function () {
             $scope.counter += 10;
