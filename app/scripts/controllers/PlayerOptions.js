@@ -15,4 +15,5 @@ angular.module('elicngApp')
         'Karma'
       ];
       console.log($scope.selectedPlayer);
+      $scope.selectedPlayer.playing = false;
   });
