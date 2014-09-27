@@ -1,10 +1,10 @@
 <h3>100 Shots of Beer in 100 Minutes.</h3>
-<br/>
+<br />
 
-<p>Players:</p>
-<ul class="list-group"  ng-repeat="player in players">
-    <li class="list-group-item">       
-        <label class="swag-playa-text">{{ player.name }} - Level: {{ ranks[player.level] }}</label> 
+<p class="swag-playa-text">Players:</p>
+<ul class="list-group" ng-repeat="player in players">
+    <li class="list-group-item">
+        <label class="swag-playa-text">{{ player.name }} - Level: {{ ranks[player.level] }}</label>
         <label class="badge swag-playa-text">Shots: {{player.level}}</label>
     </li>
 </ul>
@@ -15,19 +15,22 @@
         <input type="text" class="form-control" placeholder="New Player" ng-model="newPlayer">
         <span class="input-group-btn">
             <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-plus" /> Add </button>
-        </span>      
+        </span>
     </div>
 </form>
-    <br />
-    <div class="alert alert-danger" role="alert"><strong>It's time!</strong> Drink!</div>
-    <p class="swag-counterator-text">{{ minutes }} m {{ seconds  }} s</p>
-    <div class="progress">
-        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:{{seconds/60 * 100}}%">
-            <p>Get ready!</p>
-        </div>
+<br />
+<div class="alert alert-danger" role="alert"><strong>It's time!</strong> Drink!</div>
+<p class="swag-counterator-text">{{ minutes }} m {{ seconds  }} s</p>
+<progressbar max="max" value="dynamic"><span style="color:black; white-space:nowrap;">{{dynamic}} / {{max}}</span></progressbar>
+
+<div class="progress">
+    <div class="progress-bar progress-bar-striped" role="progressbar" style="width:{{seconds/60 * 100}}%">
+        <p>Get ready!</p>
     </div>
-    <p>debug counter: {{ counter }}</p>  <button type="button" class="btn btn-default" ng-click="debugPlus10()">Debug: Add 10 seconds</button>
-    <button type="button" class="btn btn-success" ng-click="start()">Start</button>
-    <button type="button" class="btn btn-warning" ng-click="stop()">Pause</button>
-    <button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
-    <br />
+</div>
+<p>debug counter: {{ counter }}</p>
+<button type="button" class="btn btn-default" ng-click="debugPlus10()">Debug: Add 10 seconds</button>
+<button type="button" class="btn btn-success" ng-click="start()">Start</button>
+<button type="button" class="btn btn-warning" ng-click="stop()">Pause</button>
+<button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
+<br />
