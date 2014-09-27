@@ -8,13 +8,13 @@
  * Controller of the elicngApp
  */
 angular.module('elicngApp')
-    .controller('CenturionCtrl', function ($scope, $timeout) {
+    .controller('CenturionCtrl', function ($scope, $timeout, centurionranks) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
             'Karma'
         ];
-
+        $scope.ranks = centurionranks.getRanks();
         $scope.counter = 0;
         $scope.players = [];
         $scope.seconds = 0;
@@ -29,7 +29,7 @@ angular.module('elicngApp')
 
         $scope.computeLogic = function () {
             $scope.seconds = $scope.counter;
-            if ($scope.counter == 60) {
+            if ($scope.counter >= 60) {
                 $scope.counter = 0;
                 $scope.minutes++;
                 angular.forEach($scope.players, function(p) {
@@ -51,7 +51,7 @@ angular.module('elicngApp')
 
         $scope.reset = function () {
             $scope.stop();
-            $scope.counter = 0;
+            $scope.counter = 55;
             $scope.computeLogic();
         };
 
@@ -59,7 +59,7 @@ angular.module('elicngApp')
             if ($scope.newPlayer) {
                 $scope.players.push({name: $scope.newPlayer, level: 0});
                 $scope.newPlayer = '';
-            }   
+            }
         }
 
         $scope.init = function () {
