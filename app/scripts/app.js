@@ -18,7 +18,7 @@ angular
         'ngTouch',
         'LocalStorageModule'
     ])
-    .config(['localStorageServiceProvider', function(localStorageServiceProvider){
+    .config(['localStorageServiceProvider', function (localStorageServiceProvider) {
         localStorageServiceProvider.setPrefix('elicng');
     }])
     .config(function ($routeProvider) {
@@ -40,8 +40,8 @@ angular
                 controller: 'TodoCtrl'
             })
             .when('/maxime', {
-              templateUrl: 'views/maxime.html',
-              controller: 'MaximeCtrl'
+                templateUrl: 'views/maxime.html',
+                controller: 'MaximeCtrl'
             })
             .otherwise({
                 redirectTo: '/'
