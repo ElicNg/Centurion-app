@@ -17,6 +17,11 @@
 <br/>
 
 <p class="swag-counterator-text">{{ minutes }} m {{ seconds  }} s</p>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{seconds/60 * 100}}%">
+        <p>Get ready!</p> 
+    </div>
+</div>
 <p>debug counter: {{ counter }}</p>  <button type="button" class="btn btn-default" ng-click="debugPlus10()" >Debug: Add 10 seconds</button>
 <button type="button" class="btn btn-default" ng-click="start()" >Start</button>
 <button type="button" class="btn btn-default" ng-click="stop()">Pause</button>
