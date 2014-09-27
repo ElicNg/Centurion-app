@@ -70,6 +70,7 @@ angular.module('elicngApp')
 
         $scope.init = function () {
             $scope.reset();
+            $scope.max = 60;
 
             var minutesInStore = localStorageService.get('minutes');
             var counterInStore = localStorageService.get('counter');
