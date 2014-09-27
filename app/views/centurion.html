@@ -7,6 +7,7 @@
         <i class="glyphicon glyphicon-user swag-playa-icon"></i>
         <label class="swag-playa-text">{{ player.name }} - Level: {{ ranks[player.level] }}</label>       
         <label class="badge swag-playa-text">Shots: {{player.level}}</label>
+        <button type="button" class="btn" ng-click="openPlayerOptions(player)"><i class="glyphicon glyphicon-cog" /></button>
     </li>
 </ul>
 <form ng-submit="addPlayer()">
@@ -20,7 +21,7 @@
 <br />
 <div class="alert alert-danger" role="alert"><strong>It's time!</strong> Drink!</div>
 <p class="swag-counterator-text">{{ minutes }} m {{ seconds  }} s</p>
-<progressbar max="max" value="dynamic">
+<progressbar max="max" value="seconds">
     <span style="color:black; white-space:nowrap;">Get ready!</span>
 </progressbar>
 <p>debug counter: {{ counter }}</p>
@@ -29,9 +30,11 @@
 <button type="button" class="btn btn-warning" ng-click="stop()">Pause</button>
 <button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
 <br />
-<button type="button" class="btn btn-danger" ng-click="clickToOpen()">POPUP!!</button>
+
 
 <script type="text/ng-template" id="playerOptions">
     <h1>Template heading</h1>
-    <p>Content goes here</p>
+    <p>Giving up already?</p>
+    <button type="button" class="btn btn-warning" ng-click="skip()">Skip!</button>
+    <button type="button" class="btn btn-danger" ng-click="playerGiveUp()">Give up!</button>
 </script>
