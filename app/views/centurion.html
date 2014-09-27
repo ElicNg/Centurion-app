@@ -4,13 +4,12 @@
 <p class="swag-playa-text">Players:</p>
 <ul class="list-group" ng-repeat="player in players">
     <li class="list-group-item">
-        <label class="swag-playa-text">{{ player.name }} - Level: {{ ranks[player.level] }}</label>
+        <i class="glyphicon glyphicon-user swag-playa-icon"></i>
+        <label class="swag-playa-text">{{ player.name }} - Level: {{ ranks[player.level] }}</label>       
         <label class="badge swag-playa-text">Shots: {{player.level}}</label>
     </li>
 </ul>
-
 <form ng-submit="addPlayer()">
-
     <div class="input-group">
         <input type="text" class="form-control" placeholder="New Player" ng-model="newPlayer">
         <span class="input-group-btn">
@@ -30,3 +29,9 @@
 <button type="button" class="btn btn-warning" ng-click="stop()">Pause</button>
 <button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
 <br />
+<button type="button" class="btn btn-danger" ng-click="clickToOpen()">POPUP!!</button>
+
+<script type="text/ng-template" id="playerOptions">
+    <h1>Template heading</h1>
+    <p>Content goes here</p>
+</script>

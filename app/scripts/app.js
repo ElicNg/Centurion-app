@@ -17,7 +17,8 @@ angular
         'ngSanitize',
         'ngTouch',
         'LocalStorageModule',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'ngDialog'
     ])
     .config(['localStorageServiceProvider', function (localStorageServiceProvider) {
         localStorageServiceProvider.setPrefix('elicng');

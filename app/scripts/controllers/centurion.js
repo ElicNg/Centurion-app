@@ -8,14 +8,16 @@
  * Controller of the elicngApp
  */
 angular.module('elicngApp')
-    .controller('CenturionCtrl', function ($scope, $timeout, centurionranks, localStorageService) {
+    .controller('CenturionCtrl', function ($scope, $timeout, centurionranks, localStorageService, ngDialog) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
             'Karma'
         ];
         $scope.ranks = centurionranks.getRanks();
-
+        $scope.clickToOpen = function () {
+            ngDialog.open({ template: 'playerOptions' });
+        };
         var timeout; // Keep the timeout in var
 
         $scope.onTimeout = function () {
