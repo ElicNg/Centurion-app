@@ -2,8 +2,11 @@
 <br/>
 
 <p>Players:</p>
-<ul ng-repeat="player in players">
-    <li class=""> <label>{{ player.name }} - Level: {{ ranks[player.level] }} ({{player.level}})</label></li>
+<ul class="list-group"  ng-repeat="player in players">
+    <li class="list-group-item">       
+        <label class="swag-playa-text">{{ player.name }} - Level: {{ ranks[player.level] }}</label> 
+        <label class="badge swag-playa-text">Shots: {{player.level}}</label>
+    </li>
 </ul>
 
 <form ng-submit="addPlayer()">
@@ -16,15 +19,15 @@
     </div>
 </form>
     <br />
-
+    <div class="alert alert-danger" role="alert"><strong>It's time!</strong> Drink!</div>
     <p class="swag-counterator-text">{{ minutes }} m {{ seconds  }} s</p>
     <div class="progress">
-        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{seconds/60 * 100}}%">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:{{seconds/60 * 100}}%">
             <p>Get ready!</p>
         </div>
     </div>
     <p>debug counter: {{ counter }}</p>  <button type="button" class="btn btn-default" ng-click="debugPlus10()">Debug: Add 10 seconds</button>
-    <button type="button" class="btn btn-default" ng-click="start()">Start</button>
-    <button type="button" class="btn btn-default" ng-click="stop()">Pause</button>
-    <button type="button" class="btn btn-default" ng-click="reset()">Reset</button>
+    <button type="button" class="btn btn-success" ng-click="start()">Start</button>
+    <button type="button" class="btn btn-warning" ng-click="stop()">Pause</button>
+    <button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
     <br />
