@@ -15,7 +15,7 @@ angular.module('elicngApp')
             'Karma'
         ];
         $scope.ranks = centurionranks.getRanks();
-        
+
         var timeout; // Keep the timeout in var
 
         $scope.onTimeout = function () {
@@ -108,8 +108,13 @@ angular.module('elicngApp')
         };
 
         $scope.openPlayerOptions = function (player) {
+            $scope.selectedPlayer = player;
             console.log(player);
-            ngDialog.open({ template: 'playerOptions' });
+            ngDialog.open({
+                template: 'playerOptions',
+                controller: 'PlayerOptionsCtrl',
+                scope: $scope
+            });
         };
 
         $scope.init();
