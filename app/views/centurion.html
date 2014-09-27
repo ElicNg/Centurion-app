@@ -21,7 +21,9 @@
 <br />
 <div class="alert alert-danger" role="alert"><strong>It's time!</strong> Drink!</div>
 <p class="swag-counterator-text">{{ minutes }} m {{ seconds  }} s</p>
-<progressbar max="max" value="seconds"><span style="color:black; white-space:nowrap;">{{seconds}} / {{max}}</span></progressbar>
+<progressbar max="max" value="dynamic">
+    <span style="color:black; white-space:nowrap;">{{dynamic}} / {{max}}</span>
+</progressbar>
 
 <div class="progress">
     <div class="progress-bar progress-bar-striped" role="progressbar" style="width:{{seconds/60 * 100}}%">
