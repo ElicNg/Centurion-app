@@ -8,7 +8,7 @@
  * Controller of the elicngApp
  */
 angular.module('elicngApp')
-    .controller('CenturionCtrl', function ($scope, $timeout, centurionranks) {
+    .controller('CenturionCtrl', function ($scope, $timeout, centurionranks, localStorageService) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -51,7 +51,7 @@ angular.module('elicngApp')
 
         $scope.reset = function () {
             $scope.stop();
-            $scope.counter = 55;
+            $scope.counter = 0;
             $scope.computeLogic();
         };
 
@@ -68,6 +68,36 @@ angular.module('elicngApp')
 
         $scope.init = function () {
             $scope.reset();
+
+            var minutesInStore = localStorageService.get('minutes');
+            var counterInStore = localStorageService.get('counter');
+            var playerInStore = localStorageService.get('players');
+
+            if (playerInStore) {
+                $scope.players = playerInStore;
+            }
+
+            if (counterInStore) {
+                $scope.counter = parseInt(counterInStore);
+                $scope.seconds = $scope.counter;
+            }
+
+            if (minutesInStore) {
+                $scope.minutes = parseInt(minutesInStore);
+            }
+
+            $scope.$watch('players', function () {
+                console.log($scope.players);
+                localStorageService.set('players', angular.toJson($scope.players));
+            }, true);
+
+            $scope.$watch('counter', function () {
+                localStorageService.set('counter', angular.toJson(parseInt($scope.counter)));
+            }, true);
+
+            $scope.$watch('minutes', function () {
+                localStorageService.set('minutes', angular.toJson(parseInt($scope.minutes)));
+            }, true);
         };
 
         $scope.init();
