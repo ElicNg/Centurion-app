@@ -9,11 +9,6 @@
  */
 angular.module('elicngApp')
     .controller('CenturionCtrl', function ($scope, $timeout, centurionranks, localStorageService, ngDialog) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
         $scope.ranks = centurionranks.getRanks();
 
         var timeout; // Keep the timeout in var
@@ -66,7 +61,7 @@ angular.module('elicngApp')
 
         $scope.playerGiveUp = function (player) {
             player.playing = false;
-        }
+        };
 
         $scope.debugPlus10 = function () {
             $scope.counter += 10;
@@ -129,7 +124,7 @@ angular.module('elicngApp')
 
         $scope.updatePlayerName = function (player, newName) {
             player.name = newName;
-        }
+        };
 
         $scope.init();
     });

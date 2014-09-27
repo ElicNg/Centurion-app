@@ -9,11 +9,6 @@
  */
 angular.module('elicngApp')
   .controller('PlayerOptionsCtrl', function ($scope) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
       console.log($scope.selectedPlayer);
       $scope.selectedPlayer.playing = false;
   });

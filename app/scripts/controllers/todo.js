@@ -9,12 +9,6 @@
  */
 angular.module('elicngApp')
     .controller('TodoCtrl', function ($scope, localStorageService) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
-
         var todosInStore = localStorageService.get('todos');
         console.log(todosInStore);
         $scope.todos = todosInStore ? todosInStore : [];
