@@ -60,11 +60,15 @@ angular.module('elicngApp')
                 $scope.players.push({name: $scope.newPlayer, level: 0});
                 $scope.newPlayer = '';
             }
-        }
+        };
+
+        $scope.debugPlus10 = function () {
+            $scope.counter +=10;
+        };
 
         $scope.init = function () {
             $scope.reset();
-        }
+        };
 
         $scope.init();
 

@@ -3,7 +3,7 @@
 
 <p>Players:</p>
 <ul ng-repeat="player in players">
-    <li class=""> <label>{{ player.name }} - Level: {{ ranks[player.level] }}</label></li>
+    <li class=""> <label>{{ player.name }} - Level: {{ ranks[player.level] }} ({{player.level}})</label></li>
 </ul>
 
 <form ng-submit="addPlayer()">
@@ -17,7 +17,7 @@
 <br/>
 
 <p>{{ minutes }} minutes {{ seconds  }} seconds</p>
-<p>debug counter: {{ counter }}</p>
+<p>debug counter: {{ counter }}</p>  <button type="button" class="btn btn-default" ng-click="debugPlus10()" >Debug: Add 10 seconds</button>
 <button type="button" class="btn btn-default" ng-click="start()" >Start</button>
 <button type="button" class="btn btn-default" ng-click="stop()">Pause</button>
 <button type="button" class="btn btn-default" ng-click="reset()">Reset</button>
