@@ -109,12 +109,20 @@ angular.module('elicngApp')
 
         $scope.openPlayerOptions = function (player) {
             $scope.selectedPlayer = player;
-            console.log(player);
             ngDialog.open({
                 template: 'playerOptions',
                 controller: 'PlayerOptionsCtrl',
                 scope: $scope
             });
+        };
+
+        $scope.playerSkip = function (player) {
+            console.log('player Skip' + player.name);
+        };
+
+        $scope.playerGiveUp = function (player) {
+            console.log('playerGiveUp' + player.name);
+            player.playing = false;
         };
 
         $scope.init();
