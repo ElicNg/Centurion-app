@@ -15,10 +15,7 @@ angular.module('elicngApp')
             'Karma'
         ];
         $scope.ranks = centurionranks.getRanks();
-        $scope.counter = 0;
-        $scope.players = [];
-        $scope.seconds = 0;
-        $scope.minutes = 0;
+
         var timeout; // Keep the timeout in var
 
         $scope.onTimeout = function () {
@@ -52,6 +49,9 @@ angular.module('elicngApp')
         $scope.reset = function () {
             $scope.stop();
             $scope.counter = 0;
+            $scope.players = [];
+            $scope.seconds = 0;
+            $scope.minutes = 0;
             $scope.computeLogic();
         };
 
@@ -79,7 +79,6 @@ angular.module('elicngApp')
 
             if (counterInStore) {
                 $scope.counter = parseInt(counterInStore);
-                $scope.seconds = $scope.counter;
             }
 
             if (minutesInStore) {
@@ -98,6 +97,8 @@ angular.module('elicngApp')
             $scope.$watch('minutes', function () {
                 localStorageService.set('minutes', angular.toJson(parseInt($scope.minutes)));
             }, true);
+
+            $scope.computeLogic();
         };
 
         $scope.init();
