@@ -1,12 +1,21 @@
 .swag-counterator-text {
     font-size: 50px;
     font-weight: bolder;
+    text-align: -webkit-center;
 }
 
 .swag-playa-text {
-    font-size:30px;
+    font-size: 30px;
 }
 
 .swag-playa-icon {
-    font-size:1.5em !important;
+    font-size: 1.5em !important;
+}
+
+.timer-box {
+    background-color: #f5f5f5;
+    border: 2px solid;
+    border-radius: 25px;
+    margin-top: 28px;
+    margin-bottom: 47px;
 }

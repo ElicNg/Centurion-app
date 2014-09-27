@@ -1,14 +1,20 @@
 <link rel="stylesheet" href="styles/centurion.css">
-<h3>100 Shots of Beer in 100 Minutes.</h3>
+<h1>100 Shots of Beer in 100 Minutes.</h1>
 <br />
+<div class="timer-box">
+    <p class="swag-counterator-text">{{ minutes }} m {{ seconds }} s</p>
+    <progressbar max="max" value="seconds">
+        <span style="color:black; white-space:nowrap;">Get ready!</span>
+    </progressbar>
+</div>
 
 <p class="swag-playa-text">Players:</p>
 <ul class="list-group" ng-repeat="player in players">
-    <li class="list-group-item">
+    <li class="list-group-item" ng-click="openPlayerOptions(player)">
+
         <i class="glyphicon glyphicon-user swag-playa-icon"></i>
         <label class="swag-playa-text">{{ player.name }} - Level: {{ ranks[player.level] }}</label>
         <label class="badge swag-playa-text">Shots: {{player.level}}</label>
-        <button type="button" class="btn" ng-click="openPlayerOptions(player)"><i class="glyphicon glyphicon-cog" /></button>
     </li>
 </ul>
 <form ng-submit="addPlayer()">
@@ -20,18 +26,14 @@
     </div>
 </form>
 <br />
-<div class="alert alert-danger" role="alert"><strong>It's time!</strong> Drink!</div>
-<p class="swag-counterator-text">{{ minutes }} m {{ seconds  }} s</p>
-<progressbar max="max" value="seconds">
-    <span style="color:black; white-space:nowrap;">Get ready!</span>
-</progressbar>
-<p>debug counter: {{ counter }}</p>
+<!--<div class="alert alert-danger" role="alert"><strong>It's time!</strong> Drink!</div>-->
+
 <button type="button" class="btn btn-default" ng-click="debugPlus10()">Debug: Add 10 seconds</button>
 <button type="button" class="btn btn-success" ng-click="start()">Start</button>
 <button type="button" class="btn btn-warning" ng-click="stop()">Pause</button>
 <button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
-<br />
 
+<br />
 
 <script type="text/ng-template" id="playerOptions">
     <link rel="stylesheet" href="styles/PlayerOptions.css">
@@ -39,7 +41,7 @@
     <div class="btn-group-vertical">
         <p>Change Name:</p>
         <div class="input-group renamebox">
-            
+
             <input type="text" class="form-control renamebox" ng-model="playerOptionsNewName" placeholder="New name">
             <span class="input-group-btn renamebox">
                 <button class="btn btn-default renamebox" type="submit" ng-click="updatePlayerName(selectedPlayer, playerOptionsNewName)">Update</button>
