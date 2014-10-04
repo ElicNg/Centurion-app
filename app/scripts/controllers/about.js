@@ -9,5 +9,8 @@
  */
 angular.module('centurionApp')
   .controller('AboutCtrl', function ($scope) {
-    $scope.controllerName = 'About';
+      $scope.isActive = function (viewLocation) {
+          var active = (viewLocation === $location.path());
+          return active;
+      };
 });

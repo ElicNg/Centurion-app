@@ -1,4 +1,7 @@
+ <!-- build:css(.tmp) styles/centurion.css -->
 <link rel="stylesheet" href="styles/centurion.css">
+<!-- endbuild -->
+
 <h1>100 Shots of Beer in 100 Minutes.</h1>
 <br />
 <div class="timer-box">
@@ -36,7 +39,10 @@
 <br />
 
 <script type="text/ng-template" id="playerOptions">
+    <!-- build:css(.tmp) styles/PlayerOptions.css -->
     <link rel="stylesheet" href="styles/PlayerOptions.css">
+    <!-- endbuild -->
+
     <p class="swag-playa-text title">Options</p>
     <div class="btn-group-vertical">
         <p>Change Name:</p>
@@ -53,4 +59,5 @@
         <br />
         <div class="btn-group"><button type="button" class="btn-lg btn-danger btnPlayerOptions" ng-click="playerGiveUp(selectedPlayer)">Give up!</button></div>
     </div>
+
 </script>

@@ -8,7 +8,12 @@
  * Controller of the centurionApp
  */
 angular.module('centurionApp')
-    .controller('CenturionCtrl', function ($scope, $timeout, centurionranks, localStorageService, ngDialog) {
+    .controller('CenturionCtrl', function ($scope,$rootScope, $timeout, centurionranks, localStorageService, ngDialog) {
+        $scope.isActive = function (viewLocation) {
+            console.log(viewLocation);
+            var active = (viewLocation === $location.path());
+            return active;
+        };
         $scope.ranks = centurionranks.getRanks();
 
         var timeout; // Keep the timeout in var

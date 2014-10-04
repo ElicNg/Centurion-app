@@ -23,7 +23,7 @@ angular
     .config(['localStorageServiceProvider', function (localStorageServiceProvider) {
         localStorageServiceProvider.setPrefix('centurionApp');
     }])
-    .config(function ($routeProvider) {
+    .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/about', {
                 templateUrl: 'views/about.html',
