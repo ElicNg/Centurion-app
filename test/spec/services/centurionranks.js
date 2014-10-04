@@ -3,7 +3,7 @@
 describe('Service: centurionranks', function () {
 
   // load the service's module
-  beforeEach(module('elicngApp'));
+  beforeEach(module('centurionApp'));
 
   // instantiate service
   var centurionranks;
@@ -11,8 +11,8 @@ describe('Service: centurionranks', function () {
     centurionranks = _centurionranks_;
   }));
 
-  it('should do something', function () {
-    expect(!!centurionranks).toBe(true);
-  });
+  //it('should do something', function () {
+  //  expect(!!centurionranks).toBe(true);
+  //});
 
 });

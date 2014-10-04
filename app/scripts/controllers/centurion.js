@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name elicngApp.controller:CenturionCtrl
+ * @name centurionApp.controller:CenturionCtrl
  * @description
  * # CenturionCtrl
- * Controller of the elicngApp
+ * Controller of the centurionApp
  */
-angular.module('elicngApp')
+angular.module('centurionApp')
     .controller('CenturionCtrl', function ($scope, $timeout, centurionranks, localStorageService, ngDialog) {
         $scope.ranks = centurionranks.getRanks();
 

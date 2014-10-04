@@ -3,7 +3,7 @@
 describe('Controller: CenturionCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('elicngApp'));
+  beforeEach(module('centurionApp'));
 
   var CenturionCtrl,
     scope;

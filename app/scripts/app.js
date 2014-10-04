@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name elicngApp
+ * @name centurionApp
  * @description
- * # elicngApp
+ * # centurionApp
  *
  * Main module of the application.
  */
 angular
-    .module('elicngApp', [
+    .module('centurionApp', [
         'ngAnimate',
         'ngCookies',
         'ngResource',
@@ -21,14 +21,10 @@ angular
         'ngDialog'
     ])
     .config(['localStorageServiceProvider', function (localStorageServiceProvider) {
-        localStorageServiceProvider.setPrefix('elicng');
+        localStorageServiceProvider.setPrefix('centurionApp');
     }])
     .config(function ($routeProvider) {
         $routeProvider
-            .when('/', {
-                templateUrl: 'views/main.html',
-                controller: 'MainCtrl'
-            })
             .when('/about', {
                 templateUrl: 'views/about.html',
                 controller: 'AboutCtrl'
@@ -37,16 +33,8 @@ angular
                 templateUrl: 'views/centurion.html',
                 controller: 'CenturionCtrl'
             })
-            .when('/todo', {
-                templateUrl: 'views/todo.html',
-                controller: 'TodoCtrl'
-            })
-            .when('/maxime', {
-                templateUrl: 'views/maxime.html',
-                controller: 'MaximeCtrl'
-            })
             .otherwise({
-                redirectTo: '/'
+                redirectTo: '/centurion'
             });
     })
 ;

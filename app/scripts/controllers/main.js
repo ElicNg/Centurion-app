@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name elicngApp.controller:MainCtrl
+ * @name centurionApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the elicngApp
+ * Controller of the centurionApp
  */
-angular.module('elicngApp')
+angular.module('centurionApp')
   .controller('MainCtrl', function ($scope) {
       $scope.controllerName = 'Main';
   });

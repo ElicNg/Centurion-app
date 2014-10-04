@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name elicngApp.controller:AboutCtrl
+ * @name centurionApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the elicngApp
+ * Controller of the centurionApp
  */
-angular.module('elicngApp')
+angular.module('centurionApp')
   .controller('AboutCtrl', function ($scope) {
     $scope.controllerName = 'About';
 });
