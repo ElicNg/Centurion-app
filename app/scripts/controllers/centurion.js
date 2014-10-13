@@ -8,7 +8,7 @@
  * Controller of the centurionApp
  */
 angular.module('centurionApp')
-    .controller('CenturionCtrl', function ($scope,$rootScope, $timeout, centurionranks, localStorageService, ngDialog) {
+    .controller('CenturionCtrl', function ($scope, $rootScope, $timeout, centurionranks, localStorageService, ngDialog) {
         $scope.isActive = function (viewLocation) {
             console.log(viewLocation);
             var active = (viewLocation === $location.path());
@@ -29,9 +29,12 @@ angular.module('centurionApp')
                 $scope.counter = 0;
                 $scope.minutes++;
                 angular.forEach($scope.players, function (p) {
-                    if (p.playing) {
+                    if (p.skipNextTurn) {
+                        p.skipNextTurn = false; // Skips this turn. Remove the flag
+                    } else if (p.playing) {
                         p.level++;
                     }
+                    
                 });
             }
             $scope.seconds = $scope.counter;
@@ -59,7 +62,7 @@ angular.module('centurionApp')
 
         $scope.addPlayer = function () {
             if ($scope.newPlayer) {
-                $scope.players.push({ name: $scope.newPlayer, level: 0, playing: true });
+                $scope.players.push({ name: $scope.newPlayer, level: 0, playing: true , skipNextTurn: false});
                 $scope.newPlayer = '';
             }
         };
@@ -119,11 +122,12 @@ angular.module('centurionApp')
         };
 
         $scope.playerSkip = function (player) {
-            console.log('player Skip' + player.name);
+            console.log('player Skip ' + player.name);
+            player.skipNextTurn = true;
         };
 
         $scope.playerGiveUp = function (player) {
-            console.log('playerGiveUp' + player.name);
+            console.log('playerGiveUp ' + player.name);
             player.playing = false;
         };
 

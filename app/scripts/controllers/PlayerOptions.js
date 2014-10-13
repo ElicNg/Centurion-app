@@ -9,6 +9,5 @@
  */
 angular.module('centurionApp')
   .controller('PlayerOptionsCtrl', function ($scope) {
-      console.log($scope.selectedPlayer);
-      $scope.selectedPlayer.playing = false;
+      
   });
