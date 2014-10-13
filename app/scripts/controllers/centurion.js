@@ -67,10 +67,6 @@ angular.module('centurionApp')
             }
         };
 
-        $scope.playerGiveUp = function (player) {
-            player.playing = false;
-        };
-
         $scope.debugPlus10 = function () {
             $scope.counter += 10;
             $scope.computeLogic();
@@ -132,6 +128,7 @@ angular.module('centurionApp')
         };
 
         $scope.updatePlayerName = function (player, newName) {
+            console.log('playerRename: ' + player.name + ' > newName: ' + newName);
             player.name = newName;
         };
 
