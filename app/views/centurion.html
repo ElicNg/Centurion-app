@@ -6,8 +6,9 @@
 <br />
 <div class="timer-box">
     <p class="swag-counterator-text">{{ minutes }} m {{ seconds }} s</p>
+    <div class="swag-counterator-text"><span ng-class="{bubble: getReady, hide: !getReady}">Get ready!</span></div>
     <progressbar max="max" value="seconds">
-        <span style="color:black; white-space:nowrap;">Get ready!</span>
+        <!--<span style="color:black; white-space:nowrap;">Get ready!</span>-->
     </progressbar>
 </div>
 
@@ -50,7 +51,7 @@
 
             <input type="text" class="form-control renamebox" ng-model="playerOptionsNewName" placeholder="New name">
             <span class="input-group-btn renamebox">
-                <button class="btn btn-default renamebox" type="submit" ng-click="closeThisDialog();updatePlayerName(selectedPlayer, playerOptionsNewName)">Update</button>
+                <button class="btn btn-default renamebox" type="submit" ng-click="closeThisDialog();updatePlayerName(selectedPlayer, playerOptionsNewName)">Update Name</button>
             </span>
 
         </div>

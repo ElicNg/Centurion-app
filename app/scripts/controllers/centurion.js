@@ -15,6 +15,7 @@ angular.module('centurionApp')
             return active;
         };
         $scope.ranks = centurionranks.getRanks();
+        $scope.getReady = false;
 
         var timeout; // Keep the timeout in var
 
@@ -34,9 +35,12 @@ angular.module('centurionApp')
                     } else if (p.playing) {
                         p.level++;
                     }
-                    
+
                 });
             }
+
+
+            $scope.getReady = $scope.counter >= 55;
             $scope.seconds = $scope.counter;
         };
 
@@ -62,7 +66,7 @@ angular.module('centurionApp')
 
         $scope.addPlayer = function () {
             if ($scope.newPlayer) {
-                $scope.players.push({ name: $scope.newPlayer, level: 0, playing: true , skipNextTurn: false});
+                $scope.players.push({ name: $scope.newPlayer, level: 0, playing: true, skipNextTurn: false });
                 $scope.newPlayer = '';
             }
         };

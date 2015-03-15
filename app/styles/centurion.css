@@ -19,3 +19,23 @@
     margin-top: 28px;
     margin-bottom: 47px;
 }
+
+.bubble { 
+  animation:pulse 1s infinite; 
+  -webkit-animation:pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%      { transform:scale(1); }
+  25%     { transform:scale(2); }
+  75%     { transform:scale(1); }
+}
+@-webkit-keyframes pulse {
+  0%      { -webkit-transform:scale(1); }
+  25%     { -webkit-transform:scale(2); }
+  75%     { -webkit-transform:scale(1); }
+}
+
+.hide {
+    visibility: hidden;
+}
